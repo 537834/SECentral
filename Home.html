@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link href='https://fonts.googleapis.com/css?family=Actor' rel='stylesheet'>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <script src="jquery-2.1.4.js"></script>
+  <link rel="stylesheet" type="text/css" href="styles.css" />
+
+  <style>
+
+  .divy{
+    color: #0a0a0a;
+  }
+  .card {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+/* Add some padding inside the card container */
+.container {
+  padding: 2px 16px;
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  border-radius: 5px; /* 5px rounded corners */
+  background-color: #f2f2f2;
+
+}
+
+::-moz-selection { /* Code for Firefox */
+  color: white;
+  background: grey;
+}
+
+::selection {
+  color: white;
+  background: grey;
+}
+
+*,
+*::before,
+*::after {
+  transition: 400ms all ease-in-out 50ms;
+  box-sizing: border-box;
+  backface-visibility: hidden;
+}
+
+  body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
+  .w3-bar-block .w3-bar-item {padding:20px}
+  </style>
+  <body style = "background: #545556">
+
+
+    <div class="w3-container w3-padding-32 w3-center">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing: border-box;}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #e9e9e9;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #ffffff;
+  color: white;
+}
+<link rel="shortcut icon" href="https://drive.google.com/file/d/1RBZWf7oFPiVcwbnzQE6Q6fxysd24t8WN/view?usp=sharing" />
+
+</style>
+</head>
+<body>
+
+       <span class="loader"><span class="loader-inner"></span></span>
+     </div>
+     <script>
+         $(window).on("load",function(){
+           $(".loader-wrapper").fadeOut("slow");
+         });
+     </script>
+
+       <div class="content">
+<div class="topnav">
+
+</div>
+<h3 style="text-align: center; font-family: Arial, Helvetica, sans-serif; color: grey">HOME</h3>
+
+<br>
+
+<div class="card">
+  <div class="container">
+  <p font-family: 'Actor';>Search from: <br><br> <a href="https://www.secentral.weebly.com/google" target="_blank">Google.com</a>
+    </p>
+<p><a href="https://www.secentral.weebly.com/Bing" target="_blank">Bing.com</a>
+  </p>
+  <p><a href="https://www.secentral.weebly.com/Yahoo" target="_blank">Yahoo.com</a>
+    </p>
+      <p><a href="https://www.secentral.weebly.com/DuckDuckGo" target="_blank">DuckDuckGo.com</a>
+        </p>
+          <p><a href="https://www.secentral.weebly.com/AOL" target="_blank">AOL.com</a>
+            </p>
+              <p><a href="https://www.secentral.weebly.com/YouTube" target="_blank">YouTube.com</a>
+                </p>
+                  <p><a href="https://www.secentral.weebly.com/Internet-Archive" target="_blank">Internet Archive.com</a>
+                    </p>
+                    <p><a href="https://www.secentral.weebly.com/Ask" target="_blank">Ask.com</a>
+                      </p>
+
+                  </div>
+                </div>
+
+    <hr id="about">
+
+<br><br>
+
+
+<!-- Footer -->
+<div class="card">
+  <div class="container">
+    <footer class="w3-row-padding w3-padding-32">
+      <div class="w3-third">
+        <h3 style="text-align: center; font-family: Arial, Helvetica, sans-serif">Search Engine Central</h3>
+        <p style="text-align: center; font-family: Arial, Helvetica, sans-serif">Website made with help from the community on StackOverflow.com</p>
+
+      </div>
+
+
+<!-- Google translate widget-->
+<div id="google_translate_element"></div>
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+}
+</script>
+
+
+<!-- Clock Face (productivity feature)-->
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<canvas id="canvas" width="100" height="100"
+style="background-color:#ffffff00">
+</canvas>
+
+<script>
+var canvas = document.getElementById("canvas");
+var ctx = canvas.getContext("2d");
+var radius = canvas.height / 2;
+ctx.translate(radius, radius);
+radius = radius * 0.90
+setInterval(drawClock, 1000);
+
+function drawClock() {
+  drawFace(ctx, radius);
+  drawNumbers(ctx, radius);
+  drawTime(ctx, radius);
+}
+
+function drawFace(ctx, radius) {
+  var grad;
+  ctx.beginPath();
+  ctx.arc(0, 0, radius, 0, 2*Math.PI);
+  ctx.fillStyle = 'white';
+  ctx.fill();
+  grad = ctx.createRadialGradient(0,0,radius*0.95, 0,0,radius*1.05);
+  grad.addColorStop(0, '#333');
+  grad.addColorStop(0.5, 'white');
+  grad.addColorStop(1, '#333');
+  ctx.strokeStyle = grad;
+  ctx.lineWidth = radius*0.1;
+  ctx.stroke();
+  ctx.beginPath();
+  ctx.arc(0, 0, radius*0.1, 0, 2*Math.PI);
+  ctx.fillStyle = '#333';
+  ctx.fill();
+}
+
+function drawNumbers(ctx, radius) {
+  var ang;
+  var num;
+  ctx.font = radius*0.15 + "px arial";
+  ctx.textBaseline="middle";
+  ctx.textAlign="center";
+  for(num = 1; num < 13; num++){
+    ang = num * Math.PI / 6;
+    ctx.rotate(ang);
+    ctx.translate(0, -radius*0.85);
+    ctx.rotate(-ang);
+    ctx.fillText(num.toString(), 0, 0);
+    ctx.rotate(ang);
+    ctx.translate(0, radius*0.85);
+    ctx.rotate(-ang);
+  }
+}
+
+function drawTime(ctx, radius){
+    var now = new Date();
+    var hour = now.getHours();
+    var minute = now.getMinutes();
+    var second = now.getSeconds();
+    //hour
+    hour=hour%12;
+    hour=(hour*Math.PI/6)+
+    (minute*Math.PI/(6*60))+
+    (second*Math.PI/(360*60));
+    drawHand(ctx, hour, radius*0.5, radius*0.07);
+    //minute
+    minute=(minute*Math.PI/30)+(second*Math.PI/(30*60));
+    drawHand(ctx, minute, radius*0.8, radius*0.07);
+    // second
+    second=(second*Math.PI/30);
+    drawHand(ctx, second, radius*0.9, radius*0.02);
+}
+
+function drawHand(ctx, pos, length, width) {
+    ctx.beginPath();
+    ctx.lineWidth = width;
+    ctx.lineCap = "round";
+    ctx.moveTo(0,0);
+    ctx.rotate(pos);
+    ctx.lineTo(0, -length);
+    ctx.stroke();
+    ctx.rotate(-pos);
+}
+</script>
+
+<!-- Date -->
+<p id="demo">Good Evening!</p>
+
+<script>
+if (new Date().getHours() < 18) {
+  document.getElementById("demo").innerHTML = "Good day!";
+}
+</script>
+<p>Date: <span id="datetime"></span></p>
+
+<script>
+var dt = new Date();
+document.getElementById("datetime").innerHTML = (("0"+(dt.getMonth()+1)).slice(-2)) +"/"+ (("0"+dt.getDate()).slice(-2)) +"/"+ (dt.getFullYear());
+</script>
+
+<script>
+
+// This script sets OSName variable as follows:
+// "Windows"    for all versions of Windows
+// "MacOS"      for all versions of Macintosh OS
+// "Linux"      for all versions of Linux
+// "UNIX"       for all other UNIX flavors
+// "Unknown OS" indicates failure to detect the OS
+
+var OSName="Unknown OS";
+if (navigator.appVersion.indexOf("Win")!=-1) OSName="Windows";
+if (navigator.appVersion.indexOf("Mac")!=-1) OSName="MacOS";
+if (navigator.appVersion.indexOf("X11")!=-1) OSName="UNIX";
+if (navigator.appVersion.indexOf("Linux")!=-1) OSName="Linux";
+
+document.write('Your OS: '+OSName);
+</script>
+
+<!-- Making of/about creator and code -->
+<h6>Want the code? Head over to the hidden <a href="https://www.secentral.weebly.com/code" target="_blank">download page</h6>
+  <br>
+<h6><a href="https://www.secentral.weebly.com/about" target="_blank">Making Of & About Creator</h6>
+
+  </div>
+
+</div>
+</div>
+
+<!--End of HTML code-->
+</body>
+</html>
